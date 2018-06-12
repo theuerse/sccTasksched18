@@ -1,0 +1,72 @@
+https://aws.amazon.com/de/ec2/pricing/on-demand/
+
+LInux, Region EU (Frankfurt)
+20180604
+
+	vCPU	ECU	Arbeitsspeicher (RAM) (GiB)	Instance-Speicher (GB)	Linux/UNIX-Nutzung
+Allgemeine Zwecke – Aktuelle Generation
+t2.nano	1	Variable	0.5	Nur EBS	$0.0067 pro Stunde
+t2.micro	1	Variable	1	Nur EBS	$0.0134 pro Stunde
+t2.small	1	Variable	2	Nur EBS	$0.0268 pro Stunde
+t2.medium	2	Variable	4	Nur EBS	$0.0536 pro Stunde
+t2.large	2	Variable	8	Nur EBS	$0.1072 pro Stunde
+t2.xlarge	4	Variable	16	Nur EBS	$0.2144 pro Stunde
+t2.2xlarge	8	Variable	32	Nur EBS	$0.4288 pro Stunde
+m5.large	2	10	8	Nur EBS	$0.115 pro Stunde
+m5.xlarge	4	15	16	Nur EBS	$0.23 pro Stunde
+m5.2xlarge	8	31	32	Nur EBS	$0.46 pro Stunde
+m5.4xlarge	16	61	64	Nur EBS	$0.92 pro Stunde
+m5.12xlarge	48	173	192	Nur EBS	$2.76 pro Stunde
+m5.24xlarge	96	345	384	Nur EBS	$5.52 pro Stunde
+m4.large	2	6.5	8	Nur EBS	$0.12 pro Stunde
+m4.xlarge	4	13	16	Nur EBS	$0.24 pro Stunde
+m4.2xlarge	8	26	32	Nur EBS	$0.48 pro Stunde
+m4.4xlarge	16	53.5	64	Nur EBS	$0.96 pro Stunde
+m4.10xlarge	40	124.5	160	Nur EBS	$2.4 pro Stunde
+m4.16xlarge	64	188	256	Nur EBS	$3.84 pro Stunde
+Für Datenverarbeitung optimiert – Aktuelle Generation
+c5.large	2	8	4	Nur EBS	$0.097 pro Stunde
+c5.xlarge	4	16	8	Nur EBS	$0.194 pro Stunde
+c5.2xlarge	8	31	16	Nur EBS	$0.388 pro Stunde
+c5.4xlarge	16	62	32	Nur EBS	$0.776 pro Stunde
+c5.9xlarge	36	139	72	Nur EBS	$1.746 pro Stunde
+c5.18xlarge	72	278	144	Nur EBS	$3.492 pro Stunde
+c4.large	2	8	3.75	Nur EBS	$0.114 pro Stunde
+c4.xlarge	4	16	7.5	Nur EBS	$0.227 pro Stunde
+c4.2xlarge	8	31	15	Nur EBS	$0.454 pro Stunde
+c4.4xlarge	16	62	30	Nur EBS	$0.909 pro Stunde
+c4.8xlarge	36	132	60	Nur EBS	$1.817 pro Stunde
+GPU-Instances – Aktuelle Generation
+p2.xlarge	4	12	61	Nur EBS	$1.326 pro Stunde
+p2.8xlarge	32	94	488	Nur EBS	$10.608 pro Stunde
+p2.16xlarge	64	188	732	Nur EBS	$21.216 pro Stunde
+g3.4xlarge	16	47	122	Nur EBS	$1.425 pro Stunde
+g3.8xlarge	32	94	244	Nur EBS	$2.85 pro Stunde
+g3.16xlarge	64	188	488	Nur EBS	$5.7 pro Stunde
+RAM-optimiert – Aktuelle Generation
+x1.16xlarge	64	174.5	976	1 x 1920 SSD	$9.337 pro Stunde
+x1.32xlarge	128	349	1952	2 x 1920 SSD	$18.674 pro Stunde
+x1e.xlarge	4	12	122	1 x 120 SSD	$1.167 pro Stunde
+x1e.2xlarge	8	23	244	1 x 240 SSD	$2.334 pro Stunde
+x1e.4xlarge	16	47	488	1 x 480 SSD	$4.668 pro Stunde
+x1e.8xlarge	32	91	976	1 x 960	$9.336 pro Stunde
+x1e.16xlarge	64	179	1952	1 x 1920 SSD	$18.672 pro Stunde
+x1e.32xlarge	128	340	3904	2 x 1920 SSD	$37.344 pro Stunde
+r4.large	2	7	15.25	Nur EBS	$0.16 pro Stunde
+r4.xlarge	4	13.5	30.5	Nur EBS	$0.32 pro Stunde
+r4.2xlarge	8	27	61	Nur EBS	$0.64 pro Stunde
+r4.4xlarge	16	53	122	Nur EBS	$1.28 pro Stunde
+r4.8xlarge	32	99	244	Nur EBS	$2.561 pro Stunde
+r4.16xlarge	64	195	488	Nur EBS	$5.122 pro Stunde
+Speicheroptimiert – Aktuelle Generation
+i3.large	2	7	15.25	1 x 475 NVMe SSD	$0.186 pro Stunde
+i3.xlarge	4	13	30.5	1 x 950 NVMe SSD	$0.372 pro Stunde
+i3.2xlarge	8	27	61	1 x 1900 NVMe SSD	$0.744 pro Stunde
+i3.4xlarge	16	53	122	2 x 1900 NVMe SSD	$1.488 pro Stunde
+i3.8xlarge	32	99	244	4 x 1900 NVMe SSD	$2.976 pro Stunde
+i3.16xlarge	64	200	488	8 x 1900 NVMe SSD	$5.952 pro Stunde
+i3.metal	72	208	512	8 x 1900 NVMe SSD	$5.952 pro Stunde
+d2.xlarge	4	14	30.5	3 x 2000 HDD	$0.794 pro Stunde
+d2.2xlarge	8	28	61	6 x 2000 HDD	$1.588 pro Stunde
+d2.4xlarge	16	56	122	12 x 2000 HDD	$3.176 pro Stunde
+d2.8xlarge	36	116	244	24 x 2000 HDD	$6.352 pro Stunde

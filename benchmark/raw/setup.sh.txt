@@ -1,0 +1,4 @@
+#sudo yum update -y
+#sudo yum install -y python36
+sudo yum-config-manager --enable epel
+sudo yum install -y p7zip
