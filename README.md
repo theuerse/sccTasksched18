@@ -5,10 +5,15 @@
 ## TODO:
 
 Script/Program as frame which encompasses the whole operation (see approach-diagram) (owner: ?)
+
 Run-Script (read/reorg input for further use (MOHEFT), run MOHEFT + calc hypervolume) (owner: ?)
+
 MOHEFT impl. (owners: ?)
+
 Hypervolume calculation (owner: ?)
+
 Optimum calculation (owner: ?)
+
 Evaluation (comparison of Hypervolumes with optimum) (owner: ?)
 
 
