@@ -12,7 +12,7 @@ MOHEFT impl. (owners: Sebastian)
 
 Hypervolume calculation (owner: ?)
 
-Optimum calculation (owner: ?)
+Optimum calculation (owner: Sebastian)
 
 Evaluation (comparison of Hypervolumes with optimum) (owner: ?)
 
