@@ -92,6 +92,7 @@ public class WorkflowSchedule {
         if(otherWS.N != this.N) return false;
         if(otherWS.totalTime != this.totalTime) return false;
         if(otherWS.totalCost != this.totalCost) return false;
+        if(otherWS.crowdingDistance != this.crowdingDistance) return false;
         if(!otherWS.schedule.equals(this.schedule)) return false;
 
         return true;

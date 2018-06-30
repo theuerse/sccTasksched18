@@ -4,3 +4,4 @@ MAX_INSTANCES_PER_TYPE=5
 DAG_FILE=/home/theuers/sccTasksched18/MOHEFT/data/dag.txt
 COST_FILE=/home/theuers/sccTasksched18/MOHEFT/data/costs.CSV
 MAKESPAN_FILE=/home/theuers/sccTasksched18/MOHEFT/data/makespan.CSV
+OUTPUT_FILE=//home/theuers/sccTasksched18/MOHEFT/data/MOHEFT_tradeoffs.CSV
