@@ -1,4 +1,5 @@
 N=20
 K=6
+DAG_FILE=/home/theuers/sccTasksched18/MOHEFT/data/dag.txt
 COST_FILE=/home/theuers/sccTasksched18/MOHEFT/data/costs.CSV
 MAKESPAN_FILE=/home/theuers/sccTasksched18/MOHEFT/data/makespan.CSV
