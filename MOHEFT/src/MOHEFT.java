@@ -86,9 +86,12 @@ public class MOHEFT {
                 }
             }
 
+
+            // limit schedules to paretoFront
+            S_tmp = getParetoFront(S_tmp);
+
             // sort S_tmp according to crowding distance
-            ArrayList<WorkflowSchedule> tmp = getParetoFront(S_tmp);
-            S_tmp = tmp;
+            S_tmp = sortByCrowdingDistance(S_tmp);
 
             // choose K schedules with highest crowding distance (first K schedules in sorted list)
             S_tmp.subList(K,S_tmp.size()).clear();
@@ -96,7 +99,7 @@ public class MOHEFT {
         }
 
         // finished!
-        System.out.println("¸n\nFound tradeoff schedules: ");
+        System.out.println("\n\nFound tradeoff schedules: ");
         for(WorkflowSchedule s : S){
             System.out.println(s);
         }
@@ -135,9 +138,41 @@ public class MOHEFT {
     }
 
     private ArrayList<WorkflowSchedule> sortByCrowdingDistance(ArrayList<WorkflowSchedule> schedules){
-        ArrayList<WorkflowSchedule> sortedSchedule = new ArrayList<>();
+        double crowdingDist = 0;
 
-        return sortedSchedule;
+        // sort by first objective domain (time)
+        schedules.sort((o1, o2) -> o1.getTotalTime().compareTo(o2.getTotalTime()));
+
+        // first and last elem are assigned crowding distance "infinity"
+        schedules.get(0).setCrowdingDistance(Double.MAX_VALUE);
+        schedules.get(schedules.size()-1).setCrowdingDistance(Double.MAX_VALUE);
+
+        // for all others, crowding dist. is calculated as the difference of the objective value of the two closest neighbours
+        for(int i=1; i<schedules.size()-1;i++){
+            crowdingDist = schedules.get(i+1).getTotalTime() - schedules.get(i-1).getTotalTime();
+            schedules.get(i).setCrowdingDistance(Math.max(schedules.get(i).getCrowdingDistance(), crowdingDist));
+        }
+
+
+        // sort by second objective domain (cost)
+        schedules.sort((o1, o2) -> o1.getTotalCost().compareTo(o2.getTotalCost()));
+
+        // first and last elem are assigned crowding distance "infinity"
+        schedules.get(0).setCrowdingDistance(Double.MAX_VALUE);
+        schedules.get(schedules.size()-1).setCrowdingDistance(Double.MAX_VALUE);
+
+        // for all others, crowding dist. is calculated as the difference of the objective value of the two closest neighbours
+        // add up indiv. crowding distances? -> Manhattan distance
+        for(int i=1; i<schedules.size()-1;i++){
+            crowdingDist = schedules.get(i+1).getTotalTime() - schedules.get(i-1).getTotalTime();
+            schedules.get(i).setCrowdingDistance(Math.max(schedules.get(i).getCrowdingDistance(), crowdingDist));
+        }
+
+
+        // finally sort by crowding distance
+        schedules.sort((o1, o2) -> o1.getCrowdingDistance().compareTo(o2.getCrowdingDistance()));
+
+        return schedules;
     }
 
     private HashMap<String,Double> readMatrixFile(String path){

@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class WorkflowSchedule {
-    double totalCost=0, totalTime=0, N=0;
+    double totalCost=0, totalTime=0, N=0, crowdingDistance=0;
 
     TreeMap<String, ArrayList<String>> schedule = new TreeMap<>();
     public WorkflowSchedule(int N){
@@ -33,6 +33,27 @@ public class WorkflowSchedule {
             totalCost += cost;
             totalTime += time;
         }
+    }
+
+    public Double getTotalTime(){
+        return this.totalTime;
+    }
+
+    public Double getTotalCost(){
+        return this.totalCost;
+    }
+
+    public Double getCrowdingDistance(){
+        return this.crowdingDistance;
+    }
+
+    public void setCrowdingDistance(Double distance){
+        if(distance < 0){
+            throw new IllegalArgumentException("distance must not be negative!");
+        }else{
+            this.crowdingDistance = distance;
+        }
+
     }
 
     private int countRessources(){
