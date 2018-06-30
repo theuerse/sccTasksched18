@@ -87,12 +87,51 @@ public class MOHEFT {
             }
 
             // sort S_tmp according to crowding distance
+            ArrayList<WorkflowSchedule> tmp = getParetoFront(S_tmp);
+            S_tmp = tmp;
 
             // choose K schedules with highest crowding distance (first K schedules in sorted list)
             S_tmp.subList(K,S_tmp.size()).clear();
             S = S_tmp;
         }
 
+        // finished!
+        System.out.println("¸n\nFound tradeoff schedules: ");
+        for(WorkflowSchedule s : S){
+            System.out.println(s);
+        }
+
+    }
+
+    private ArrayList<WorkflowSchedule> getParetoFront(ArrayList<WorkflowSchedule> schedules){
+        ArrayList<WorkflowSchedule> paretoFront = new ArrayList<>();
+        ArrayList<WorkflowSchedule> dominatedSolutions = new ArrayList<>();
+        paretoFront.add(schedules.get(0));
+        int dom=0;
+
+        for(WorkflowSchedule s : schedules.subList(1,schedules.size())){
+             dominatedSolutions.clear();
+             for(WorkflowSchedule frontSched : paretoFront){
+                 if(frontSched.equals(s)) {
+                     dom = -1; break;
+                 }
+
+                 dom = frontSched.checkDomination(s); // , 0 if non-dominant, 1 if frontSched is dominated by s
+                 if(dom == -1){
+                     // -1 if frontSched dominates s -> forget about s
+                     break;
+                 }else if(dom == 1){
+                     dominatedSolutions.add(frontSched);
+                 }
+             }
+             // -1 ... dominated is the only case in which s is not added
+             if(dom != -1){
+                 paretoFront.add(s);
+                 paretoFront.removeAll(dominatedSolutions);
+             }
+        }
+
+        return paretoFront;
     }
 
     private ArrayList<WorkflowSchedule> sortByCrowdingDistance(ArrayList<WorkflowSchedule> schedules){
