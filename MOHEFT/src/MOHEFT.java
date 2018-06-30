@@ -1,18 +1,17 @@
-import javax.imageio.IIOException;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.*;
 
 public class MOHEFT {
-    int N, K;
+    int N, K, MAX_INSTANCES_PER_TYPE;
     String[] instanceTypes = null;
     HashMap<String, Double> makeSpanMap = new HashMap<String, Double>();
     HashMap<String, Double> costMap = new HashMap<String, Double>();
-
+    ArrayList<String> R = new ArrayList<>();
+    ArrayList<WorkflowSchedule> S = new ArrayList<>();
     String[] dag;
     String[] bRankedTasks;
 
@@ -31,6 +30,7 @@ public class MOHEFT {
 
         N = Integer.parseInt(props.getProperty("N","20"));
         K = Integer.parseInt(props.getProperty("K","6"));
+        MAX_INSTANCES_PER_TYPE = Integer.parseInt(props.getProperty("MAX_INSTANCES_PER_TYPE","5"));
 
 
         makeSpanMap = readMatrixFile(props.getProperty("MAKESPAN_FILE"));
@@ -46,9 +46,59 @@ public class MOHEFT {
             System.exit(-1);
         }
         bRankedTasks = getBRankedTasks();
+        System.out.println("B-ranked task order: " + Arrays.toString(bRankedTasks));
+
+        // init ressources
+        for(String instanceType : instanceTypes){
+            for(int i=0; i < MAX_INSTANCES_PER_TYPE; i++){
+                R.add(instanceType+"_"+Integer.toString(i));
+            }
+        }
+        System.out.println("Ressources: " + R);
 
         // start calculation of schedules
-        System.out.println("B-ranked task order: " + Arrays.toString(bRankedTasks));
+        scheduleTasks(bRankedTasks);
+    }
+
+    private void scheduleTasks(String[] bRankedTasks){
+        WorkflowSchedule w;
+        String key;
+
+        // set up initial set of workflow schedules
+        for(int i = 0; i < K; i++){
+            S.add(new WorkflowSchedule(N));
+        }
+
+        // Iterate over the ranked tasks
+        for(int i = 0; i < bRankedTasks.length; i++){
+            ArrayList<WorkflowSchedule> S_tmp = new ArrayList<>();
+
+            // Iterate over all ressources
+            for(int j = 0; j < R.size(); j++){
+
+                // Iterate over all tradeoff schedules
+                for(int k = 0; k < K; k++){
+                    // Extend all intermediate schedules
+                    w = new WorkflowSchedule(S.get(k));
+                    key = bRankedTasks[i] + "@" + R.get(j).split("_")[0];
+                    w.schedule(R.get(j),bRankedTasks[i],costMap.get(key),makeSpanMap.get(key));
+                    S_tmp.add(w);
+                }
+            }
+
+            // sort S_tmp according to crowding distance
+
+            // choose K schedules with highest crowding distance (first K schedules in sorted list)
+            S_tmp.subList(K,S_tmp.size()).clear();
+            S = S_tmp;
+        }
+
+    }
+
+    private ArrayList<WorkflowSchedule> sortByCrowdingDistance(ArrayList<WorkflowSchedule> schedules){
+        ArrayList<WorkflowSchedule> sortedSchedule = new ArrayList<>();
+
+        return sortedSchedule;
     }
 
     private HashMap<String,Double> readMatrixFile(String path){
