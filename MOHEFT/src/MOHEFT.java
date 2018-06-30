@@ -76,7 +76,7 @@ public class MOHEFT {
             for(int j = 0; j < R.size(); j++){
 
                 // Iterate over all tradeoff schedules
-                for(int k = 0; k < K; k++){
+                for(int k = 0; k < Math.min(S.size(),K); k++){
                     // Extend all intermediate schedules
                     w = new WorkflowSchedule(S.get(k));
                     key = bRankedTasks[i] + "@" + R.get(j).split("_")[0];
@@ -93,7 +93,7 @@ public class MOHEFT {
             S_tmp = sortByCrowdingDistance(S_tmp);
 
             // choose K schedules with highest crowding distance (first K schedules in sorted list)
-            S_tmp.subList(K,S_tmp.size()).clear();
+            S_tmp.subList(Math.min(S_tmp.size(),K),S_tmp.size()).clear();
             S = S_tmp;
         }
 
