@@ -1,0 +1,12 @@
+task:successorTask1,successorTask2,successorTaskN
+T1:T3
+T2.1:T1
+T2.2:T1
+T2.3:T1
+T2.4:T1
+T3:T4.1,T4.2,T4.3,T4.4
+T4.1:T5
+T4.2:T5
+T4.3:T5
+T4.4:T5
+T5:

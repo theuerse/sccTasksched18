@@ -1,0 +1,4 @@
+N=20
+K=6
+COST_FILE=/home/theuers/sccTasksched18/MOHEFT/data/costs.CSV
+MAKESPAN_FILE=/home/theuers/sccTasksched18/MOHEFT/data/makespan.CSV
