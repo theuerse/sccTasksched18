@@ -1,6 +1,4 @@
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.util.*;
@@ -105,6 +103,8 @@ public class MOHEFT {
             System.out.println(s);
         }
 
+        writeResultsToFile(S);
+
     }
 
     private ArrayList<WorkflowSchedule> getParetoFront(ArrayList<WorkflowSchedule> schedules){
@@ -140,8 +140,18 @@ public class MOHEFT {
 
     private void writeResultsToFile(ArrayList<WorkflowSchedule> schedules){
         StringBuilder sb = new StringBuilder();
-        //sb.append("")
-        //OUTPUT_FILE
+        sb.append("totalCost,totalTime\n");
+        for(WorkflowSchedule ws : schedules){
+            sb.append(ws.totalCost+","+ws.totalTime+"\n");
+        }
+
+
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream(OUTPUT_FILE), "utf-8"))) {
+            writer.write(sb.toString());
+        }catch (IOException e){
+            System.err.println(e.getMessage());
+        }
     }
 
     private ArrayList<WorkflowSchedule> sortByCrowdingDistance(ArrayList<WorkflowSchedule> schedules){
