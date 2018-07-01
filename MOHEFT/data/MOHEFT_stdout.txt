@@ -1,0 +1,30 @@
+using config-file from: /home/theuers/sccTasksched18/MOHEFT/data/config.txt
+B-ranked task order: [T2.3, T2.2, T2.1, T2.4, T1, T3, T4.2, T4.4, T4.1, T4.3, T5]
+Ressources: [t2.nano_0, t2.nano_1, t2.nano_2, t2.nano_3, t2.nano_4, t2.micro_0, t2.micro_1, t2.micro_2, t2.micro_3, t2.micro_4, t2.medium_0, t2.medium_1, t2.medium_2, t2.medium_3, t2.medium_4, t2.xlarge_0, t2.xlarge_1, t2.xlarge_2, t2.xlarge_3, t2.xlarge_4, c5.large_0, c5.large_1, c5.large_2, c5.large_3, c5.large_4]
+
+
+Found tradeoff schedules:
+totalCost: 0.14010251196649326	totalTime: 39.995515203
+	c5.large_0	[T2.3, T2.2, T2.1, T2.4, T4.2, T4.4, T4.1, T4.3]
+	t2.micro_0	[T3]
+	t2.xlarge_0	[T1, T5]
+
+totalCost: 0.014562991724941455	totalTime: 78.248910758
+	t2.nano_0	[T2.3, T2.2, T2.1, T2.4, T1, T3, T4.2, T4.4, T4.1, T4.3, T5]
+
+totalCost: 0.034925928229623315	totalTime: 59.957036067999994
+	t2.medium_0	[T5]
+	t2.nano_0	[T2.3, T2.2, T2.1, T2.4, T1, T3, T4.2, T4.4, T4.1, T4.3]
+
+totalCost: 0.03270003677619825	totalTime: 75.64581517900001
+	c5.large_0	[T4.1, T4.3]
+	t2.nano_0	[T2.3, T2.2, T2.1, T2.4, T1, T3, T4.2, T4.4, T5]
+
+totalCost: 0.06345037450088392	totalTime: 51.06394562799999
+	t2.nano_0	[T2.3, T2.2, T2.1, T2.4, T1, T3, T4.2, T4.4, T4.1, T4.3]
+	t2.xlarge_0	[T5]
+
+totalCost: 0.11284857065902806	totalTime: 43.900655650999994
+	c5.large_0	[T2.3, T2.2, T2.1, T2.4, T4.3]
+	t2.nano_0	[T3, T4.2, T4.4, T4.1]
+	t2.xlarge_0	[T1, T5]

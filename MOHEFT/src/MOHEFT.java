@@ -30,7 +30,7 @@ public class MOHEFT {
         N = Integer.parseInt(props.getProperty("N","20"));
         K = Integer.parseInt(props.getProperty("K","6"));
         MAX_INSTANCES_PER_TYPE = Integer.parseInt(props.getProperty("MAX_INSTANCES_PER_TYPE","5"));
-        OUTPUT_FILE = props.getProperty("OUTPUT_FILE");
+        OUTPUT_FILE = props.getProperty("MOHEFT_OUTPUT_FILE");
 
         makeSpanMap = readMatrixFile(props.getProperty("MAKESPAN_FILE"));
         costMap = readMatrixFile(props.getProperty("COST_FILE"));
