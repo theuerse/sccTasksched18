@@ -301,7 +301,7 @@ public class MOHEFT {
 
 
 
-
+    // Program argument example: /home/theuers/sccTasksched18/MOHEFT/data/config.txt
     public static void main (String[] args){
         if(args.length != 1){
             System.out.println("locaction of config-File needs to be given!");
