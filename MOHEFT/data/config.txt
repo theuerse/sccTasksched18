@@ -6,3 +6,4 @@ COST_FILE=/home/theuers/sccTasksched18/MOHEFT/data/costs.CSV
 MAKESPAN_FILE=/home/theuers/sccTasksched18/MOHEFT/data/makespan.CSV
 MOHEFT_OUTPUT_FILE=/home/theuers/sccTasksched18/MOHEFT/data/MOHEFT_tradeoffs.CSV
 NADIR_OUTPUT_FILE=/home/theuers/sccTasksched18/MOHEFT/data/Nadir_point.txt
+UTOPIA_OUTPUT_FILE=/home/theuers/sccTasksched18/MOHEFT/data/Utopia_point.txt
