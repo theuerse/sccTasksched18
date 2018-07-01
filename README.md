@@ -24,7 +24,7 @@ Currently, there is not much non-determinism in MOHEFT, so the result stays the 
 
 
 
-###ETC:
+### ETC:
 one Hypervolume per run (result)
 because of GA -> use multiple runs as a run may yield different results (from others)
 use hypervolume to make results comparable  -> select best one to be compared to optimum
