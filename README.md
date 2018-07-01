@@ -8,9 +8,9 @@ Script/Program as frame which encompasses the whole operation (see approach-diag
 
 Run-Script (read/reorg input for further use (MOHEFT), run MOHEFT + calc hypervolume) (owner: ?)
 
-MOHEFT impl. (owners: Sebastian)
+MOHEFT impl. (owners: Sebastian, seems ok so far)
 
-Hypervolume calculation (owner: ?)
+Hypervolume calculation (owner: Sebastian, looking for a library)
 
 Optimum calculation (owner: ?)
 
