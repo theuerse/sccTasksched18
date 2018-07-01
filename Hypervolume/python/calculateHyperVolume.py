@@ -3,6 +3,7 @@ from hv import *
 
 
 #python calculateHyperVolume.py /home/theuers/sccTasksched18/MOHEFT/data/MOHEFT_tradeoffs.CSV /home/theuers/sccTasksched18/MOHEFT/data/Nadir_point.txt > MOHEFT_hv.txt
+#python calculateHyperVolume.py /home/theuers/sccTasksched18/MOHEFT/data/Utopia_point.txt /home/theuers/sccTasksched18/MOHEFT/data/Nadir_point.txt > optimum_hv.txt
 if len(sys.argv)!=3:
     print("usage: python " + sys.argv[0] + "<path to pareto front file> <path to nadir point file>")
     exit(-1)
