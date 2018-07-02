@@ -4,9 +4,9 @@
 
 ## TODO:
 
-Script/Program as frame which encompasses the whole operation (see approach-diagram) (owner: ?)
+Script/Program as frame which encompasses the whole operation (see approach-diagram) (owner: Sebastian)
 
-Run-Script (read/reorg input for further use (MOHEFT), run MOHEFT + calc hypervolume) (owner: ?)
+Run-Script (read/reorg input for further use (MOHEFT), run MOHEFT + calc hypervolume) (owner: Sebastian)
 
 MOHEFT impl. (owners: Sebastian, seems ok so far)
 
@@ -14,7 +14,9 @@ Hypervolume calculation (owner: Sebastian, looking ok so far)
 
 Optimum calculation (owner: Sebastian, ok if we consider Utopia-point)
 
-Evaluation (comparison of Hypervolumes with optimum) (owner: ?)
+Evaluation (comparison of Hypervolumes with optimum) (owner: Sebastian)
+
+Documentation (owner: Sebastian + ?)
 
 
 ### Remarks by Sebastian:
