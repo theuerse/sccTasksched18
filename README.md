@@ -1,6 +1,7 @@
 # sccTasksched18
 
-
+## Schedule:
+Goal: Ideally, we want to be done by tuesday (3rd of July) to be able to schedule pres. for wednesday
 
 ## TODO:
 
