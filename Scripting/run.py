@@ -90,6 +90,7 @@ os.system("cd " + BIN_FOLDER + " && java " + UTOPIA_APP + " " + configFilePath)
 # calculate optimum hypervolume
 optimum_hv = float(check_output(["python", os.path.join(BIN_FOLDER, HYPER_VOLUME_APP), os.path.join(RESULT_FOLDER, "Utopia_point.txt"), os.path.join(RESULT_FOLDER, "Nadir_point.txt")]))
 
+print("optimum hypervolume: " + str(optimum_hv))
 
 hypervols = {}
 # calculate hypervolumes of all run-results
@@ -110,7 +111,7 @@ for hv in sortedHVs:
 # print more info about the best tradeoff-solution
 print("\n\n\n\n--------------------------------------------------------------------------------")
 print("\nBest run: ")
-print(str(sortedHVs[0])+"\n")
+print(str(sortedHVs[0])+"\t"+ str((sortedHVs[0][1]/optimum_hv)*100)+ "% of optimum hypervolume\n")
 
 # print stdout of scheduling-app of best solution
 with open(os.path.join(RESULT_FOLDER,sortedHVs[0][0]), "r") as outputFile:
